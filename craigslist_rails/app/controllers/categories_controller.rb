@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    redirect_to posts_path
+    redirect_to category_posts_path(@category.id)
   end
 
 

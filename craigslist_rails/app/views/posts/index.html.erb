@@ -1,1 +1,6 @@
-<h1>Posts for "@category"</h1>
+
+<h1> Posts for "<%= @category.title %>" </h1>
+<% @posts.each do |eachpost| %>
+<%= link_to 'Show me the post', category_post_path(@category.id, eachpost.id) %> <%= eachpost.title %>  <br>
+<% end %>
+
