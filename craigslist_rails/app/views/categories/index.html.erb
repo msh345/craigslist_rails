@@ -1,0 +1,10 @@
+
+
+
+<h1> Welcome </h1>
+
+
+<% @categories.each do |category| %>
+<%= link_to 'Show', category_path(category) %> <%= category.title %> <br>
+<% end %>
+
