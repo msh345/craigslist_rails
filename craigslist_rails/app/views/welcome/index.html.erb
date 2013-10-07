@@ -1,2 +1,26 @@
 <h1> Welcome to Craiglist Junior </h1>
-<%= link_to "All Categories", controller: "categories" %>
+
+<h2>To view posts only, <%= link_to "click here to see a list of categories", controller: "categories" %></h2>
+
+
+<h2>To create a post, you must first login:</h2>
+
+<p><% if @error %></p>
+<%= @error %>
+<% end %>
+
+<%= link_to "logout", logout_path, controller: "sessions" %>
+
+<%= form_for(:session, url: login_path) do |f| %>
+<p>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+</p>
+<p>
+  <%= f.label :password %> <br>
+  <%= f.text_field :password %>
+</p>
+  <p>
+  <%= f.submit "Sign In" %>
+  </p>
+<% end %>
