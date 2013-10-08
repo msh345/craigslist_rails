@@ -9,7 +9,7 @@
 <%= @error %>
 <% end %>
 
-<%= link_to "logout", logout_path, controller: "sessions" %>
+<%= link_to "logout", logout_path, method: :delete if current_user%>
 
 <%= form_for(:session, url: login_path) do |f| %>
 <p>

@@ -10,4 +10,19 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def create
+  	@post = current_user.posts.new(title: params[:post][:title], body: params[:post][:body], category_id: params[:post][:category_id])
+
+		if @post.save
+			redirect_to @post
+		else
+			render 'new'
+		end
+  end
+
+  def destroy
+  end
+
+
+
 end

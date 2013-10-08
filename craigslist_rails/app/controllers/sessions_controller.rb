@@ -5,16 +5,13 @@ class SessionsController < ApplicationController
 
   def create
     if user = User.authenticate(params[:session])
-      # puts user
-      # Save the user ID in the session so it can be used in
-      # subsequent requests
       session[:current_user_id] = user.id
       redirect_to categories_path
     else
       @error = "WRONG!"
-      redirect_to welcome_index_path
+      render "welcome/index"
+      #redirect_to welcome_index_path
     end
-
 
   end
 
