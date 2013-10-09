@@ -1,7 +1,7 @@
 == README
 
 **This is how to start a new Rails project:
-rails \_4.0.0_\ new craigslist_rails --database=postgresql -T
+rails \_4.0.0_ new craigslist_rails --database=postgresql -T
 
 **To run the application in the server, you need to first comment out the username and password fields in database.yml. Then, you need to create the databse using rake db:create:all
 
